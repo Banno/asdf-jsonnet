@@ -27,7 +27,7 @@ install () {
     local -r source_path="${TMP_DOWNLOAD_DIR}/jsonnet-${version}"
 
     echo "Compiling version ${version} of jsonnet"
-    make -sC "${source_path}"
+    make -sC "${source_path}" >/dev/null 2>&1
 
     echo "Cleaning jsonnet previous binaries"
     rm -rf "${bin_install_path?}"
