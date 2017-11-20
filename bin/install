@@ -23,7 +23,7 @@ install () {
 
   local -r download_url="$(get_download_url "${version}")"
 
-  if curl -sfL "${download_url}" | tar xzv -C "${TMP_DOWNLOAD_DIR}"; then
+  if curl -sfL "${download_url}" | tar xz -C "${TMP_DOWNLOAD_DIR}"; then
     local -r source_path="${TMP_DOWNLOAD_DIR}/jsonnet-${version}"
 
     echo "Compiling version ${version} of jsonnet"
